@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+</head>
+<body>
+    <table class='table' border='0' cellpadding="0" cellspacing="0">
+        <caption> danh sach</caption>
+        <thread>
+            <tr>
+                <th>STT </br></th>
+                <th>First Name <br></th>
+                <th>Last Name<br></th>
+                <th>Email<br></th>
+                <th>Reg_date<br></th>
+            </tr>
+        </thread>
+        <tbody>
+            <%i=1%>
+            <%results.forEach(function(rows){%>
+                <tr>
+                    <td><%=rows.id%></td>
+                    <td><%=rows.firstname%></td>
+                    <td><%=rows.lastname%></td>
+                    <td><%=rows.email%></td>
+                    <td><%=rows.reg_date%></td>
+                </tr>
+            <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

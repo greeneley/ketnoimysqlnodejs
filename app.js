@@ -10,19 +10,19 @@ app.set('views','./views');
 app.use(express.static(__dirname+'/public'));
 
 var connection = mysql.createConnection({
-    host:'localhost',
-    user:null,
-    password:null,
-    database:'user2'
+    host:'127.0.0.1',
+    port: 3308,
+    user:'root',
+    password:'C87MJ0E40lfOcbr6',
+    database:'haipro'
 });
 connection.connect();
 app.get('/',function(req,res){
-    connection.query('select * from user2', function(error,results,fields){
-        if(error) throw error;
-        console.log('– USER TABLE — ' , result);
-        res.json(result);
-    });
-
+    connection.query('select * from haipro.user', function (error, results, fields) {
+        if (error) throw error;
+        res.render('index',{results});
+      });
+  
 });
 
 http.listen(process.env.PORT || 8888,function(){
